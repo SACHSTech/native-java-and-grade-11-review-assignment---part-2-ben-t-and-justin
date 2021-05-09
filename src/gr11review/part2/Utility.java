@@ -55,11 +55,28 @@ public class Utility {
       }
 
     }
-  
     return alphaWord;
-
   }
     
-
+/** 
+* Use loops and if statements to first compare if the number matches the value given, and then if the number behind and in front are different from the value given AND the number given is not at the end. Then, replace the number with the larger of the two.
+@author Benjamin Teh
+*/
+  public static int[] notAlone(int[] nums, int value){
+    
+    int arrayCount;
+    
+    for (arrayCount = 1; arrayCount < (nums.length() - 1); arrayCount++){
+      if (nums[arrayCount] != nums[arrayCount - 1] && nums[arrayCount] != nums[arrayCount + 1]){
+        if (nums[arrayCount - 1] >= nums[arrayCount + 1]){
+          nums[arrayCount] = nums[arrayCount - 1];
+        }
+        else{
+          nums[arrayCount] = nums[arrayCount + 1];
+        }
+      }
+    }
+    return nums;
+  }
     
 }
