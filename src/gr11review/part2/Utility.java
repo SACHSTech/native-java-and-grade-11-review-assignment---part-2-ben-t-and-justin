@@ -19,5 +19,24 @@ public class Utility {
      }
      return newString; 
    }
+  
+  public static String longestWord(String filenametxt)throws IOException{
+    BufferedReader file = new BufferedReader(new FileReader(filenametxt));
+
+      String word = "";
+      String longestword = "";
+      boolean firstword = true;
+
+    while((word = file.readLine())!=null){
+      if (firstword){
+         word = longestword;
+         firstword = false;
+      }else if (longestword.length() > word.length()) {
+         word = longestword;
+      }
+    }
+    file.close();
+    return longestword;
   }
+}
   
