@@ -1,6 +1,5 @@
 package gr11review.part2;
 import java.io.*;
-import java.util.*;
 
 public class Utility {
 
@@ -39,13 +38,25 @@ public class Utility {
   }
 
 /**
-* In words.txt there are two words that start with "a".
-* Therefore we must run a loop checking the first two letters of each word. Each word that is higher in the order than the one before will be replacing the previous word until the file is done running.
+* Use compareTo command to compare each current string with the previous string. Output the finally word that has the highest value.
+@author Benjamin Teh
 */
-  public static String alphaWord(String filenametxt){
+  public static String alphaWord(String filenametxt) throws IOException{
     BufferedReader file = new BufferedReader(new FileReader(filenametxt));
 
-    String firstWord;
+    String currentLine = "";
+    String alphaWord = file.readLine();
+
+    while (currentLine != null){
+      currentLine = file.readLine();
+
+      if (currentLine != null && alphaWord.compareToIgnoreCase(currentLine) > 0){
+        alphaWord = currentLine;
+      }
+
+    }
+  
+    return alphaWord;
 
   }
     
