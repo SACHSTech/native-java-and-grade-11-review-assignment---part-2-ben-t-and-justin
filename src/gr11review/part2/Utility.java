@@ -66,8 +66,8 @@ public class Utility {
     
     int arrayCount;
     
-    for (arrayCount = 1; arrayCount < (nums.length() - 1); arrayCount++){
-      if (nums[arrayCount] != nums[arrayCount - 1] && nums[arrayCount] != nums[arrayCount + 1]){
+    for (arrayCount = 1; arrayCount < (nums.length - 1); arrayCount++){
+      if (nums[arrayCount] == value && nums[arrayCount] != nums[arrayCount - 1] && nums[arrayCount] != nums[arrayCount + 1]){
         if (nums[arrayCount - 1] >= nums[arrayCount + 1]){
           nums[arrayCount] = nums[arrayCount - 1];
         }
