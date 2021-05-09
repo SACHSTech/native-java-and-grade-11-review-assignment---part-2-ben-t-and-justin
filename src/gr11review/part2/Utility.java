@@ -29,14 +29,32 @@ public class Utility {
 
     while((word = file.readLine())!=null){
       if (firstword){
-         word = longestword;
+         longestword = file.readLine();
          firstword = false;
-      }else if (longestword.length() > word.length()) {
-         word = longestword;
+      }else if (longestword.length() < word.length()) {
+         longestword = word;
       }
     }
     file.close();
     return longestword;
+  }
+
+  public static int[] tenRun(int[] nums){
+
+      int count;
+      int currentnum = 0;
+      int multiple;
+
+      for(count = 0; count < nums.length; count++){
+          currentnum = nums[count];
+          if(currentnum%10==0){
+              multiple = currentnum;
+            
+          }
+      }   
+      return nums;
+
+ 
   }
 }
   
