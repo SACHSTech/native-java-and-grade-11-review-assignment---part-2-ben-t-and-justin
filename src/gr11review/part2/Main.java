@@ -2,6 +2,7 @@ package gr11review.part2;
 
 import java.io.*;
 import gr11review.part2.Utility.*;
+import java.util.Arrays;
 
 public class Main { 
   public static void main(String[] args) throws IOException {
@@ -14,7 +15,12 @@ public class Main {
 
     System.out.println(Utility.longestWord(words)); 
 
-    System.out.println();
+      int[] nums = {2, 10, 3, 4, 20, 5};
+    System.out.println(Arrays.toString(Utility.tenRun(nums)));
+
+    int[] nums1 = {1, 2, 4, 6};
+    int[] nums2 = {2, 4};
+    System.out.println(Utility.linearIn(nums1,nums2));
   }
  
 }
