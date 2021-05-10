@@ -4,11 +4,7 @@ import java.io.*;
 public class Utility {
 
 /**
-* Scan each letter and check if it is a number.
-* If it is a number, add it to a temporary string holder.
-* Once a non-number is reached, convert the string into a number and add it to the total, and wipe the string. Use a counter to trigger this.
-* Make sure that the sum will add even if the last character of the string is a number.
-@author Benjamin Teh
+* @author Benjamin Teh
 */
   public static int sumNumbers(String str){
     int count;
@@ -18,6 +14,10 @@ public class Utility {
     int finalSum = 0;
 
     for (count = 0; count < str.length(); count++){
+    /**
+    * Scan each letter and check if it is a number.
+    * If it is a number, add it to a temporary string holder.
+    */
       letterHolder = str.charAt(count);
       if (Character.isDigit(letterHolder)){
         sequenceCount++;
@@ -27,6 +27,10 @@ public class Utility {
         }
       }
       else {
+        /**
+        * Once a non-number is reached, convert the string into a number and add it to the total, and wipe the string. Use a counter to trigger this.
+        * Make sure that the sum will add even if the last character of the string is a number.
+        */
         if (sequenceCount > 0){
         finalSum = finalSum + Integer.parseInt(sequenceHolder);
         sequenceHolder = "";
@@ -38,15 +42,16 @@ public class Utility {
   }
 
 /**
-* Use compareTo command to compare each current string with the previous string. Output the finally word that has the highest value.
-@author Benjamin Teh
+* @author Benjamin Teh
 */
   public static String alphaWord(String filenametxt) throws IOException{
     BufferedReader file = new BufferedReader(new FileReader(filenametxt));
 
     String currentLine = "";
     String alphaWord = file.readLine();
-
+    /**
+    * Use compareTo command to compare each current string with the previous string. Output the finally word that has the highest value.
+    */
     while (currentLine != null){
       currentLine = file.readLine();
 
@@ -80,20 +85,21 @@ public class Utility {
   }
 
 /**
-* Run a loop to add up the total value of the array.
-Divide it in half. Run a loop again and stop when the current sum of the value is greater than or equal to the half sum. If the current sum is equal to the half sum, then it can be split in half. Return true. If it is greater, then return false.
-Edit: Problem with the variables. Aim to check simply check if balanceSum * 2 will equal totalSum at any point.
-@author Benjamin Teh
+* @author Benjamin Teh
 */
   public static boolean canBalance(int[] nums){
     int counter;
     int totalSum = 0;
     int balanceSum = 0;
-
+  /**
+  * Run a loop to add up the total value of the array.
+  */
     for(counter = 0; counter < nums.length; counter++){
       totalSum = totalSum + nums[counter];
     }
-
+  /**
+  * Problem with the variables. Aim to check simply check if balanceSum * 2 will equal totalSum at any point.
+  */
     for(counter = 0; counter < nums.length; counter++){
       balanceSum = balanceSum + nums[counter];
       if(balanceSum * 2 == totalSum){
@@ -106,12 +112,15 @@ Edit: Problem with the variables. Aim to check simply check if balanceSum * 2 wi
   }
 
 /**
-* Goal is to create a grid. Use loops and integers that function both as counters, and the rows/columns.
-* Create a loop to input information row by row, across columns from left to right. Add a 1 when the sum of the row + column = n - 1, since I will start my counters at 0 like always. Everything past n-1 will be a 2, and everything before n-1 will be a 0. Remember to print out the grid every time a row ends.
+* Goal is to create a grid. 
 @author Benjamin Teh
 */
   public static void diagonal(int n)throws IOException{
       PrintWriter diagonal = new PrintWriter(new FileWriter("diagonalOut.txt", true));
+
+      /**
+      * Use loops and integers that function both as counters, and the rows/columns.
+      */ 
 
       String grid = "";
       int rowCount;
@@ -119,7 +128,9 @@ Edit: Problem with the variables. Aim to check simply check if balanceSum * 2 wi
 
       for (rowCount = 0; rowCount < n; rowCount++) {
         grid = "";
-
+      /**
+      * Create a loop to input information row by row, across columns from left to right. Add a 1 when the sum of the row + column = n - 1, since I will start my counters at 0 like always. Everything past n-1 will be a 2, and everything before n-1 will be a 0. Remember to print out the grid every time a row ends.
+      */
         for (columnCount = 0; columnCount < n; columnCount++) {
           if (rowCount + columnCount == n - 1) {
             grid = grid + "1";
@@ -129,7 +140,10 @@ Edit: Problem with the variables. Aim to check simply check if balanceSum * 2 wi
             grid = grid + "0";
           }
 
-          //add comma to number if not at the end
+          /**
+          * Add a comma after the number is put in each time if the column is not the last one
+          */
+          
           if (columnCount != n - 1) {
             grid = grid + ",";
           }
