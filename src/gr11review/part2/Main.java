@@ -21,6 +21,8 @@ public class Main {
     int[] nums1 = {1, 2, 4, 6};
     int[] nums2 = {2, 4};
     System.out.println(Utility.linearIn(nums1,nums2));
+  
+    Utility.pascalTri(3,4); 
   }
  
 }

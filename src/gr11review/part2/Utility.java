@@ -82,5 +82,39 @@ public class Utility {
            return false;
         }
     }
+
+  public static void pascalTri(int i, int j)throws IOException{
+        
+        int[][] p;
+        p = new int[i][j];
+        PrintWriter fileWriter = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt", false)); 
+
+        int count1;
+        int count2;
+        int total;
+        int row;
+        int column;
+
+        for (count1 = 0; count1 < i; count1++){
+          p[count1][0] = 1;
+            
+        }
+        for (count1 = 0; count1 < j; count1++){
+          p[0][count1] = 1;
+            
+        }
+        for (count1 = 1; count1 < i - 1; count1++){
+            for (count2 = 1; count2 < j - 1; count2++){
+                p[i][j] = p[i-1][j] + p[i][j-1];
+                p[i][j] = total;
+          }
+        }
+        for (count1 = 0;count1 < i; count1++) {
+          for (count2 = 0;count2 < j; count2++){
+              System.out.print(p[count1][count2]+","); 
+          }
+          System.out.println();
+     } 
+    }
   }
 
