@@ -78,5 +78,34 @@ public class Utility {
     }
     return nums;
   }
+
+/**
+* Run a loop to add up the total value of the array.
+Divide it in half. Run a loop again and stop when the current sum of the value is greater than or equal to the half sum. If the current sum is equal to the half sum, then it can be split in half. Return true. If it is greater, then return false.
+Edit: Problem with the variables. Aim to check simply check if balanceSum * 2 will equal totalSum at any point.
+@author Benjamin Teh
+*/
+  public static boolean canBalance(int[] nums){
+    int counter;
+    int totalSum = 0;
+    int balanceSum = 0;
+
+    for(counter = 0; counter < nums.length; counter++){
+      totalSum = totalSum + nums[counter];
+    }
+
+    for(counter = 0; counter < nums.length; counter++){
+      balanceSum = balanceSum + nums[counter];
+      if(balanceSum * 2 == totalSum){
+        return true;
+      }
+    }
+
+    return false;
+
+  }
+
+  public static void diagonal(int n){
     
+  } 
 }
