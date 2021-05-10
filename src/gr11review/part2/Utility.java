@@ -107,7 +107,8 @@ Edit: Problem with the variables. Aim to check simply check if balanceSum * 2 wi
 
 /**
 * Goal is to create a grid. Use loops and integers that function both as counters, and the rows/columns.
-* Create a loop to input information row by row, across columns from left to right. Add a 1 when the sum of the row + column = n - 1, since I will start my counters at 0 like always.
+* Create a loop to input information row by row, across columns from left to right. Add a 1 when the sum of the row + column = n - 1, since I will start my counters at 0 like always. Everything past n-1 will be a 2, and everything before n-1 will be a 0. Remember to print out the grid every time a row ends.
+@author Benjamin Teh
 */
   public static void diagonal(int n)throws IOException{
       PrintWriter diagonal = new PrintWriter(new FileWriter("diagonalOut.txt", true));
