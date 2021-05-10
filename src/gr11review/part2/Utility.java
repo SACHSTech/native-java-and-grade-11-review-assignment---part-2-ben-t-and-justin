@@ -1,9 +1,13 @@
 package gr11review.part2;
 import java.io.*;
-//Create a method that prints a word 
-//if a word has a "z" and a "p" then delete the letter imbetween it
-//if a word doesn't have 
+
 public class Utility {
+   /**
+   *takes any word that has the letter 'z' and 'p'
+   *program will delete any letter inbetween the letters 'z' and 'p'   
+   *if word does not have a 'z' or 'p' in it then it won't do anything
+   @author Justin Ho Shue
+   */
    public static String zipZap(String str) {
 
      int strlength = str.length();
@@ -21,7 +25,11 @@ public class Utility {
      }
      return newString; 
    }
-  
+  /**
+    *program looks in the list of words in the words.txt file
+    *program will take the longest word within that file
+    @author Justin Ho Shue
+  */
   public static String longestWord(String filenametxt)throws IOException{
     BufferedReader file = new BufferedReader(new FileReader(filenametxt));
 
@@ -40,7 +48,13 @@ public class Utility {
     file.close();
     return longestword;
   }
-
+  /**
+    *Takes a list of numbers from the given array
+    *Changes each multiple of 10 to 10 
+    *if it encounters another multiple of 10 
+    *it will change it to that next multiple of 10 
+    @author Justin Ho Shue 
+  */
   public static int[] tenRun(int[] nums){
 
       int count;
@@ -57,7 +71,12 @@ public class Utility {
       }   
       return nums;
   }
-
+  /**
+    *The code is given 2 arrays of numbers in increasing order
+    *if all of the numbers in inner appear in outer then it will return true
+    *if not then will return false
+    @author Justin Ho Shue
+  */ 
   public static boolean linearIn(int[] outer, int[] inner){
      
       int count;
@@ -82,7 +101,11 @@ public class Utility {
            return false;
         }
     }
-
+  /**
+    *use pascal's triangle
+    *prints out a part of pascal's triangle depending on the given perameters 
+    @author Justin Ho Shue 
+  */
   public static void pascalTri(int i, int j)throws IOException{
         
         int[][] p;
@@ -91,9 +114,6 @@ public class Utility {
 
         int count1;
         int count2;
-        int total;
-        int row;
-        int column;
 
         for (count1 = 0; count1 < i; count1++){
           p[count1][0] = 1;
@@ -103,18 +123,22 @@ public class Utility {
           p[0][count1] = 1;
             
         }
-        for (count1 = 1; count1 < i - 1; count1++){
-            for (count2 = 1; count2 < j - 1; count2++){
-                p[i][j] = p[i-1][j] + p[i][j-1];
-                p[i][j] = total;
+        for (count1 = 1; count1 < i; count1++){
+            for (count2 = 1; count2 < j; count2++){
+                p[count1][count2] = p[count1-1][count2] + p[count1][count2-1];
           }
         }
         for (count1 = 0;count1 < i; count1++) {
           for (count2 = 0;count2 < j; count2++){
-              System.out.print(p[count1][count2]+","); 
+            if (count2 == j - 1){
+              fileWriter.print(p[count1][count2]); 
+            }else{
+              fileWriter.print(p[count1][count2]+","); 
+            }
           }
-          System.out.println();
+          fileWriter.println();
      } 
+    fileWriter.close();
     }
   }
 
