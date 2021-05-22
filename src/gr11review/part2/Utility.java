@@ -260,7 +260,8 @@ public class Utility {
         
         int[][] p;
         p = new int[i][j];
-        PrintWriter fileWriter = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt", false)); 
+        //PrintWriter fileWriter = new PrintWriter(new FileWriter("src/gr11review/part2/pascalOut.txt", false)); 
+        PrintWriter fileWriter = new PrintWriter(new FileWriter("pascalOut.txt", false)); 
 
         int count1;
         int count2;
