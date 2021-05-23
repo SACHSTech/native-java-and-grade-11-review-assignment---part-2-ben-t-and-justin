@@ -25,7 +25,7 @@ public class FileIO2Test {
      */
     @Test
     void testGeneral()throws IOException{
-        assertEquals(Utility.alphaWord(absPath+"Review2_3Test_1.txt"), "accompany");
+        assertEquals("accompany",Utility.alphaWord(absPath+"Review2_3Test_1.txt"));
 
     }
 
@@ -34,7 +34,7 @@ public class FileIO2Test {
      */
     @Test
     void testSingle() throws IOException{
-        assertEquals(Utility.alphaWord(absPath+"Review2_3Test_2.txt"), "x");
+        assertEquals( "x", Utility.alphaWord(absPath+"Review2_3Test_2.txt"));
     }
     
     /**
@@ -42,7 +42,7 @@ public class FileIO2Test {
      */
     @Test
     void testDouble() throws IOException{
-        assertEquals(Utility.alphaWord(absPath+"Review2_3Test_3.txt"), "accompanyx");
+        assertEquals("accompanyx", Utility.alphaWord(absPath+"Review2_3Test_3.txt"));
     }
 
   
