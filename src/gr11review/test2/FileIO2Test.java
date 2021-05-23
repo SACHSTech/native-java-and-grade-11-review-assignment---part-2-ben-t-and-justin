@@ -9,7 +9,8 @@ import java.io.*;
 
 public class FileIO2Test {
 
-    private final String absPath = "/Users/eric/ICS4U-native-gr11review-part2/src/gr11review/test2/";
+    private String filePath = new File("").getAbsolutePath();
+    private final String absPath = filePath+ "/src/gr11review/test2/";
 
     /**
      * Test general access to the file
@@ -24,7 +25,7 @@ public class FileIO2Test {
      */
     @Test
     void testGeneral()throws IOException{
-        assertEquals(Utility.alphaWord(absPath+"Review2_3Test_1.txt"), "accompany");
+        assertEquals("accompany",Utility.alphaWord(absPath+"Review2_3Test_1.txt"));
 
     }
 
@@ -33,7 +34,7 @@ public class FileIO2Test {
      */
     @Test
     void testSingle() throws IOException{
-        assertEquals(Utility.alphaWord(absPath+"Review2_3Test_2.txt"), "x");
+        assertEquals( "x", Utility.alphaWord(absPath+"Review2_3Test_2.txt"));
     }
     
     /**
@@ -41,7 +42,7 @@ public class FileIO2Test {
      */
     @Test
     void testDouble() throws IOException{
-        assertEquals(Utility.alphaWord(absPath+"Review2_3Test_3.txt"), "accompanyx");
+        assertEquals("accompanyx", Utility.alphaWord(absPath+"Review2_3Test_3.txt"));
     }
 
   
