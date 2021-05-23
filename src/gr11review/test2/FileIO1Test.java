@@ -25,7 +25,7 @@ public class FileIO1Test {
      */
     @Test
     void testMiddle()throws IOException{
-        assertEquals(Utility.longestWord(absPath+"Review2_3Test_1.txt"), "conservation");
+        assertEquals("conservation", Utility.longestWord(absPath+"Review2_3Test_1.txt"));
 
     }
 
@@ -34,7 +34,7 @@ public class FileIO1Test {
      */
     @Test
     void testSingle() throws IOException{
-        assertEquals(Utility.longestWord(absPath+"Review2_3Test_2.txt"), "x");
+        assertEquals("x", Utility.longestWord(absPath+"Review2_3Test_2.txt"));
     }
     
     /**
@@ -42,7 +42,7 @@ public class FileIO1Test {
      */
     @Test
     void testDouble() throws IOException{
-        assertEquals(Utility.longestWord(absPath+"Review2_3Test_3.txt"), "preservation");
+        assertEquals("preservation", Utility.longestWord(absPath+"Review2_3Test_3.txt"));
     }
 
     /**
@@ -50,7 +50,7 @@ public class FileIO1Test {
      */
     @Test
     void testEnd() throws IOException{
-        assertEquals(Utility.longestWord(absPath+"Review2_3Test_4.txt"), "conservation");
+        assertEquals("conservation", Utility.longestWord(absPath+"Review2_3Test_4.txt"));
     }
 
 }
